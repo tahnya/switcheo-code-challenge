@@ -33,11 +33,11 @@ class Datasource {
 
 Issues:
 - Unused children prop: The children prop is destructured from props, but it's not used anywhere in the component
-- Unused setPrices function: The setPrices function is defined using useState, but it's not used anywhere except in the useEffect hook..
-- Inefficient loop in sortedBalances: The sortedBalances array filters and sorts the balances array, but the getPriority function is called multiple times for each balance during sorting, which can be inefficient, especially if balances is large.
-- Inefficient mapping in formattedBalances: The formattedBalances array maps over sortedBalances to add a formatted property to each balance. Since sortedBalances is already sorted and filtered, this mapping is redundant and can be merged with the sortedBalances calculation.
+- Unused setPrices function: The `setPrices` function is defined using useState, but it's not used anywhere except in the useEffect hook..
+- Inefficient loop in `sortedBalances`: The `sortedBalances` array filters and sorts the balances array, but the `getPriority` function is called multiple times for each balance during sorting, which can be inefficient, especially if balances is large.
+- Inefficient mapping in `formattedBalances`: The `formattedBalances` array maps over sortedBalances to add a formatted property to each balance. Since sortedBalances is already sorted and filtered, this mapping is redundant and can be merged with the `sortedBalances` calculation.
 - No error handling: The useEffect hook fetches data from an external API but doesn't handle errors. It's important to handle errors gracefully to provide a better user experience.
-- Console error: There's a typo in the catch block of the useEffect hook (console.err instead of console.error).
+- Console error: There's a typo in the catch block of the useEffect hook (console.err instead of `console.error`).
 
 Solutions: 
 - Remove unused variables (children, prices).
@@ -50,4 +50,4 @@ Solutions:
     - update `formattedBalances` only when `sortedBalances` changes
     - update `rows` only when `sortedBalances` changes
 - Add error handling in the `getPrices` method of the Datasource class as a try-catch block. 
-- Correct the typo in the catch block (console.error).
+- Correct the typo in the catch block `console.error`.
