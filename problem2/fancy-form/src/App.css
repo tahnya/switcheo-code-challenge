@@ -1,0 +1,140 @@
+/* App.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.App {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+  justify-content: center;
+	flex-direction: column;
+	background-color: rgb(243, 242, 242);
+  font-family: 'Trebuchet MS', sans-serif;
+  
+}
+
+.heading {
+	font-size: 20px;
+}
+
+.container {
+	height: auto;
+	width: 600px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  background-color: white; 
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin: 5px;
+}
+
+.buttons {
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  top: 50.5%;
+  
+}
+
+input {
+	font-size: 20px;
+	height: 36px;
+  border: none;
+  outline: none;
+}
+
+.left,
+.left-button {
+  width: 400px;
+}
+
+.right {
+	width: 120px;
+  text-transform: uppercase;
+}
+
+.right-button {
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+
+
+.switch {
+  border: 3px solid rgb(243, 242, 242);
+  background-color: white;
+	background-color: white;
+  border-radius: 20px;
+	cursor: pointer;
+  position: relative;
+  padding: 5px;
+}
+
+.switch:hover {
+  background-color: rgb(170, 150, 200); 
+  
+}
+
+.switch::after {
+  content: "Swap currencies"; 
+  position: absolute; 
+
+  left: calc(100% + 60px); 
+  transform: translateX(-50%); 
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+  color: rgb(191, 64, 191);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+}
+
+.switch:hover::after {
+  opacity: 1; 
+  background-color:  rgb(195, 177, 225);
+}
+
+
+button {
+  border: 3px solid rgb(243, 242, 242);
+  background-color: white;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	border-radius: 20px;
+	cursor: pointer;
+  
+}
+
+button:hover {
+  background-color:  rgb(195, 177, 225);
+}
+
+
+p,
+h3,
+button,
+.switch {
+	color: rgb(191, 64, 191);
+}
+
+h3 {
+  text-transform: none;
+}
+
+p {
+	font-size: 20px;
+	height: 36px;
+  color: black;
+  margin-bottom: 0;
+}
