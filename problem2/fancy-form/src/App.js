@@ -51,6 +51,16 @@ function App() {
 		setTo(temp);
 	}
 
+  function getOutput() {
+    if (output == 0) {
+      return "";
+    }
+    if (isNaN(output)) {
+      return "Invalid input";
+    }
+    return output.toFixed(2);
+  }
+
 	return (
 		<div className="App">
 			<div className="heading">
@@ -59,20 +69,34 @@ function App() {
 			<div className="container">
 				<div className="left">
 					<h3>Amount</h3>
-					<input type="number"
-						placeholder="Enter the amount"
+					<input 
+						placeholder="Input amount"
 						onChange={(e) => setInput(e.target.value)} />
 				</div>
-				<div className="middle">
+				<div className="right">
 					<h3>From</h3>
 					<Dropdown options={options}
 						onChange={(e) => { setFrom(e.value) }}
 						value={from} placeholder="From" />
 				</div>
-				<div className="switch">
-          {/* <span class="tooltip">Reverse currency</span> */}
-					<HiSwitchHorizontal size="30px"
-						onClick={() => { flip() }} />
+			</div>
+      <div className="buttons">
+        <div className="left-button">
+          <button onClick={() => { convert() }}>Convert</button>
+        </div>
+        <div className="right-button">
+          <div className="switch">
+            <HiSwitchHorizontal size="30px"
+              onClick={() => { flip() }} />
+          </div>
+        </div>
+        </div>
+        
+        
+      <div className="container">
+        <div className="left">
+					<h3>Converted Amount</h3>
+					<p className="output">{getOutput()}</p>
 				</div>
 				<div className="right">
 					<h3>To</h3>
@@ -80,13 +104,8 @@ function App() {
 						onChange={(e) => { setTo(e.value) }}
 						value={to} placeholder="To" />
 				</div>
-			</div>
-			<div className="result">
-				<button onClick={() => { convert() }}>Convert</button>
-				<h2>Converted Amount:</h2>
-				<p>{output === 0 ? "" : getInput() + " " + from + " = " + output.toFixed(2) + " " + to}</p>
-
-			</div>
+      </div>
+			
 		</div>
 	);
 }

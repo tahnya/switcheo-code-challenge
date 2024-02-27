@@ -7,83 +7,134 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
+  justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+	background-color: rgb(243, 242, 242);
+  font-family: 'Trebuchet MS', sans-serif;
+  
 }
 
 .heading {
-	font-family: 'Pacifico', cursive;
-	font-size: 35px;
+	font-size: 20px;
 }
 
 .container {
 	height: auto;
-	width: 800px;
+	width: 600px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+  background-color: white; 
+  border-radius: 20px;
+  padding: 20px;
+  padding-bottom: 40px;
+  margin: 5px;
+}
+
+.buttons {
+  padding: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  top: 50.5%;
+  
 }
 
 input {
-	padding-left: 5px;
 	font-size: 20px;
 	height: 36px;
+  border: none;
+  outline: none;
 }
 
-.middle,
+.left,
+.left-button {
+  width: 400px;
+}
+
 .right {
 	width: 120px;
+  text-transform: uppercase;
 }
+
+.right-button {
+  margin-left: 50px;
+  margin-right: 40px;
+}
+
+
 
 .switch {
-	padding: 5px;
-	background-color: rgb(226, 252, 184);
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-.switch .tooltip {
-  visibility: hidden;
-  width: 120px;
+  border: 3px solid rgb(243, 242, 242);
   background-color: white;
-  color: forestgreen;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
- 
-  /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 1;
+	background-color: white;
+  border-radius: 20px;
+	cursor: pointer;
+  position: relative;
+  padding: 5px;
 }
 
-.switch:hover .tooltip   {
-  visibility: visible;
+.switch:hover {
+  background-color: rgb(170, 150, 200); 
+  
 }
 
-.result {
-	box-sizing: border-box;
-	width: 800px;
-	padding-left: 30px;
+.switch::after {
+  content: "Swap currencies"; 
+  position: absolute; 
+
+  left: calc(100% + 60px); 
+  transform: translateX(-50%); 
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+  color: rgb(191, 64, 191);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
 }
+
+.switch:hover::after {
+  opacity: 1; 
+  background-color:  rgb(195, 177, 225);
+}
+
 
 button {
+  border: 3px solid rgb(243, 242, 242);
+  background-color: white;
 	width: 100px;
-	height: 30px;
-	font-weight: bold;
+	height: 50px;
 	font-size: 20px;
-	margin-top: 15px;
-	border: 2px solid forestgreen;
-	background-color: rgb(226, 252, 184);
+	border-radius: 20px;
 	cursor: pointer;
+  
 }
+
+button:hover {
+  background-color:  rgb(195, 177, 225);
+}
+
 
 p,
 h3,
 button,
 .switch {
-	color: forestgreen;
+	color: rgb(191, 64, 191);
+}
+
+h3 {
+  text-transform: none;
 }
 
 p {
-	font-size: 30px;
+	font-size: 20px;
+	height: 36px;
+  color: black;
+  margin-bottom: 0;
 }
