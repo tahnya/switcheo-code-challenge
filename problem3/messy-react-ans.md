@@ -17,7 +17,7 @@ class Datasource {
     this.url = url;
   }
 
-  async getPrices(): {
+  async getPrices() {
     try {
       const response = await fetch(this.url);
       const prices = await response.json();
