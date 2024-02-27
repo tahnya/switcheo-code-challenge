@@ -9,7 +9,7 @@ List out the computational inefficiencies and anti-patterns found in the code bl
 
 
 Datasource class:
-```
+``` ruby
 class Datasource {
   url: string;
 
@@ -17,7 +17,7 @@ class Datasource {
     this.url = url;
   }
 
-  async getPrices(): Promise<any> {
+  async getPrices(): {
     try {
       const response = await fetch(this.url);
       const prices = await response.json();
