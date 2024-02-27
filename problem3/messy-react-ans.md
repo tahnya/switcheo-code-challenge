@@ -8,6 +8,29 @@ List out the computational inefficiencies and anti-patterns found in the code bl
 4. You should also provide a refactored version of the code.
 
 
+Datasource class:
+```
+class Datasource {
+  url: string;
+
+  constructor(url: string) {
+    this.url = url;
+  }
+
+  async getPrices(): Promise<any> {
+    try {
+      const response = await fetch(this.url);
+      const prices = await response.json();
+      return prices;
+    } catch (error) {
+      console.error(error);
+      return {};
+    }
+  }
+}
+```
+
+
 Issues:
 - Unused children prop: The children prop is destructured from props, but it's not used anywhere in the component
 - Unused setPrices function: The setPrices function is defined using useState, but it's not used anywhere except in the useEffect hook..
